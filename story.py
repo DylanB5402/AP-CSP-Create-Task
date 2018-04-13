@@ -82,6 +82,9 @@ class Story(object):
                 return x
 
     def end(self):
+        print()
+        print('The End.')
+        print()
         print('Thank you for playing ' + self.title)
         if len(self.author) > 0:
             print('by ' + self.author)
@@ -178,15 +181,14 @@ branch_16 = Branch(16, 'You plead innocent.', 'The court is rigged, and you go t
 branch_17 = Branch(17, 'The guards come by, and force you to work in the mine. ', 'You eventually find a precious diamond. Do you sell it or keep it?', [(21, 'Sell it'), (22, 'Keep it')])
 branch_18 = Branch(18, 'You leave.', 'You go home, finding a dragon egg in the woods on the way home. 10 years later, you’re riding a dragon into King Bob’s front door.', [], Type.END)
 branch_19 = Branch(19, ' You stay in jail until your 3 week sentence is over.', 'You return home, and see that heroics aren’t for you.', [], Type.END)
-branch_20 = Branch(20, '', '', [(971, ''), (118, '')])
-branch_21 = Branch(21, '', '', [(971, ''), (118, '')])
-branch_22 = Branch(22, '', '', [(971, ''), (118, '')])
-branch_23 = Branch(23, '', '', [(971, ''), (118, '')])
-branch_24 = Branch(24, '', '', [(971, ''), (118, '')])
+branch_20 = Branch(20, 'You break out.', 'Steve leads you to Bob. Bob offers you dinner. Do you accept dinner?', [(23, 'Yes'), (24, 'No')])
+branch_21 = Branch(21, 'You sell it.', 'You buy your freedom and an airship to go face the Evil King Bob.', [], Type.END)
+branch_22 = Branch(22, 'You hang onto the diamond, eventually losing it.', 'You get several promotions in the mine, managing the place 20 years later.', [], Type.END)
+branch_23 = Branch(23, 'You accept dinner.', 'Bob makes really good food, and while he’s distracted, you defeat him and steal his grill. Bob surrenders and peace is restored to the land. Yay.', [], Type.END)
+branch_24 = Branch(24, 'Bob puts you to work as his personal cucumber cutter.', ' You cut 457 cucumbers a day for the next 20 years.', [], Type.END)
 
 branch_list =  [branch_1, branch_2, branch_3, branch_4, branch_5, branch_6, branch_7, branch_8,
                 branch_9, branch_10, branch_11, branch_12, branch_13, branch_14, branch_15, branch_16,
                 branch_17, branch_18, branch_19, branch_20, branch_21, branch_22, branch_23, branch_24]
 my_story = Story('THE RISE OF A HERO', branch_list)
-
-
+my_story.start()

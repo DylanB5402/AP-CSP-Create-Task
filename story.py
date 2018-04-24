@@ -18,7 +18,7 @@ class Story(object):
         print('This is an interactive story. Type the number before the option to select the option.')
         start = self.get_start()
         self.enter_branch(start.id)
-
+# QUESTION 2D
     def enter_branch(self, id):
         available_choices = []
         working_branch = self.get_branch_by_id(id)
@@ -129,7 +129,7 @@ class Branch(object):
             choice_list.append(x[1])
         return choice_list
 
-
+# QUESTION 2C
 class RNGBranch(Branch):
 
     def __init__(self, id, trunk, text, choice_list, type=Type.RNG):
